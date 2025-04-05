@@ -26,7 +26,7 @@ const JobCard = ({ job }) => {
   return (
     <div className="job-card">
       <div className="job-header">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt={`${job.companyName} logo`} className="company-logo" />
+        <img src={job.logo} alt={`${job.companyName} logo`} className="company-logo" />
         <span className="posted-time">{getTimeDifference(job.createdAt)}</span>
       </div>
       <h3>{job.jobTitle}</h3>
