@@ -1,4 +1,8 @@
 import React from 'react';
+import experence from '../images/experence.png';
+import location from '../images/location.png';
+import salary from '../images/salary.png';
+
 
 const JobCard = ({ job }) => {
 
@@ -31,9 +35,9 @@ const JobCard = ({ job }) => {
       </div>
       <h3>{job.jobTitle}</h3>
       <div className="job-details">
-        <span>🕒 1-3 yr Exp</span>
-        <span>📍 {job.location}</span>
-        <span>💰 {job.salaryRange.max}</span>
+         <span><img src={experence}></img> 1-3 yr Exp</span>
+        <span><img src={location}></img> {job.location}</span>
+        <span><img src={salary}></img> {job.salaryRange.max}</span>
       </div>
       <p>{job.jobDescription}</p>
       <button className="apply-btn">Apply Now</button>
