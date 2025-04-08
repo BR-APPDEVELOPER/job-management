@@ -4,6 +4,9 @@ import JobCard from './JobCard';
 import axios from 'axios';
 import { Range } from 'react-range';
 import logo from "../images/logo.jpg"
+import searchIcon from '../images/search.png';
+import locationIcon from '../images/location1.png';
+import jobTypeIcon from '../images/jobType.png';
 
 const Dashboard = () => {
   const [jobs, setJobs] = useState([]);
@@ -110,26 +113,39 @@ const Dashboard = () => {
         </header>
 
         <div className="search-filter">
+          <img src={searchIcon}></img>
           <input
             type="text"
             placeholder="Search by Job Title, Role"
             value={searchRole}
             onChange={(e) => setSearchRole(e.target.value)}
           />
+
+          <span className='vertical-line'></span>
+          <img src={locationIcon}></img>
           <select value={selectedLocation} onChange={(e) => setSelectedLocation(e.target.value)}>
             <option value="">Preferred Location</option>
             {locations.map((location, idx) => <option key={idx} value={location}>{location}</option>)}
           </select>
+
+          <span className='vertical-line'></span>
+          <img src={jobTypeIcon}></img>
           <select value={selectedJobType} onChange={(e) => setSelectedJobType(e.target.value)}>
             <option value="">Job Type</option>
             {jobTypes.map((type, idx) => <option key={idx} value={type}>{type}</option>)}
           </select>
+          
+          <span className='vertical-line'></span>
           <select value={selectedCompany} onChange={(e) => setSelectedCompany(e.target.value)}>
             <option value="">Company</option>
             {companies.map((comp, idx) => <option key={idx} value={comp}>{comp}</option>)}
           </select>
+          
+          
+          <span className='vertical-line'></span>
           <div className="salary-filter">
             <label>Salary Per Month</label>
+            <span>₹100K - ₹{Math.floor(salaryRange / 1000)}K</span>
             <input
               type="range"
               min="100000"
@@ -137,7 +153,7 @@ const Dashboard = () => {
               value={salaryRange}
               onChange={(e) => setSalaryRange(e.target.value)}
             />
-            <span>₹100K - ₹{Math.floor(salaryRange / 1000)}K</span>
+            
           </div>
 
         </div>

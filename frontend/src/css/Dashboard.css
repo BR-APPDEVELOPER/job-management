@@ -119,9 +119,9 @@ body{
   /* Search and Filter Bar */
    .search-filter {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     margin: 20px 0;
-    margin-left: 50px;
+    margin-left: 55px;
     margin-bottom: 10px;
     align-items: center;
     flex-wrap: wrap;
@@ -130,9 +130,12 @@ body{
   .search-filter input,
   .search-filter select {
     padding: 10px;
-    border: 1px solid #e0e0e0;
+    border: none;
     border-radius: 5px;
     width: 200px;
+    color: #686868;
+    outline: none;
+    font-weight: 500;
     font-size: 16px;
   }
   
@@ -140,17 +143,34 @@ body{
     background-color: white;
   }
 
+  .search-filter img{
+    width: 18px;
+  }
+
+  .search-filter .vertical-line{
+    width: 2px;
+    height: 40px;
+    background-color: #EAEAEA;
+  }
+
   .salary-filter {
     display: flex;
-    align-items: center;
     gap: 10px;
+    height: 50px;
+    width: 270px;
+    position: relative;
+  }
+
+  .salary-filter span{
+    margin-left: 10px;
   }
   
   .salary-filter input[type="range"] {
-    width: 110px;
-    color: #000000;
+    width: 88%;
+    top: 18px;
+    height: 6px;
+    position: absolute;
   } 
-
 
   /* Search and Filter Bar */
 /* .search-filter {
